@@ -3,7 +3,7 @@
 		<!--**********************************
             Content body end
         ***********************************-->
-
+		j
 
 
 
@@ -42,49 +42,49 @@
 
 		</html>
 		<script>
-			function AlertSwal(title, type) {
-				Swal.fire(
-					title,
-					'',
-					type
-				)
-				setTimeout(() => {
-					location.reload()
-				}, 700)
-			}
+function AlertSwal(title, type) {
+    Swal.fire(
+        title,
+        '',
+        type
+    )
+    setTimeout(() => {
+        location.reload()
+    }, 700)
+}
 
-			function logout() {
-				let option = {
-			url: 'controller/action.php',
-			type: 'post',
-			data: {
-				logout: 1
-			},
-			success: (res) => {
-				Swal.fire(
-					'ออกจากระบบสำเร็จ!',
-					'',
-					'success'
-				)
-				setTimeout(() => {
-					window.location = "login.php";
-				}, 800)
-			}
-		}
-				Swal.fire({
-					title: 'ออกจากระบบ?',
-					text: "",
-					icon: 'warning',
-					showCancelButton: true,
-					confirmButtonColor: '#3085d6',
-					cancelButtonColor: '#d33',
-					confirmButtonText: 'ตกลง',
-					cancelButtonText: 'ยกเลิก'
+function logout() {
+    let option = {
+        url: 'controller/action.php',
+        type: 'post',
+        data: {
+            logout: 1
+        },
+        success: (res) => {
+            Swal.fire(
+                'ออกจากระบบสำเร็จ!',
+                '',
+                'success'
+            )
+            setTimeout(() => {
+                window.location = "login.php";
+            }, 800)
+        }
+    }
+    Swal.fire({
+        title: 'ออกจากระบบ?',
+        text: "",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'ตกลง',
+        cancelButtonText: 'ยกเลิก'
 
-				}).then((result) => {
-					if (result.isConfirmed) {
-						$.ajax(option)
-					}
-				})
-			}
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax(option)
+        }
+    })
+}
 		</script>
